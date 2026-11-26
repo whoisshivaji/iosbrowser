@@ -1,9 +1,0 @@
-<resources>
-    <string name="app_name">Safari</string>
-    <string name="url_hint">Search or enter website name</string>
-    <string name="back">Back</string>
-    <string name="forward">Forward</string>
-    <string name="refresh">Refresh</string>
-    <string name="home">Start Page</string>
-    <string name="cancel_download">Cancel download</string>
-</resources>
