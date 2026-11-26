@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>Start Page</title>
+<style>
+  :root {
+    --bg: #050507;
+    --glass-bg: rgba(28, 28, 32, 0.62);
+    --glass-border: rgba(255, 255, 255, 0.14);
+    --text-primary: #ffffff;
+    --text-secondary: rgba(235, 235, 245, 0.62);
+    --accent: #0A84FF;
+  }
+
+  * {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    margin: 0;
+    padding: 58px 20px 110px;
+    min-height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif;
+    color: var(--text-primary);
+    background:
+      radial-gradient(circle at 18% 12%, rgba(10, 132, 255, 0.22), transparent 46%),
+      radial-gradient(circle at 86% 24%, rgba(94, 92, 230, 0.18), transparent 44%),
+      radial-gradient(circle at 50% 88%, rgba(48, 209, 88, 0.10), transparent 48%),
+      var(--bg);
+  }
+
+  .container {
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  .section-title {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+    margin: 0 0 16px 4px;
+  }
+
+  .glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    box-shadow: 0 14px 36px rgba(0, 0, 0, 0.45);
+    padding: 18px 14px;
+    margin-bottom: 24px;
+  }
+
+  .favorites-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px 10px;
+  }
+
+  .fav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text-primary);
+    transition: transform 0.18s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .fav-item:active {
+    transform: scale(0.92);
+  }
+
+  .fav-icon {
+    width: 58px;
+    height: 58px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+    margin-bottom: 8px;
+  }
+
+  .fav-label {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 72px;
+  }
+
+  .privacy-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 18px;
+  }
+
+  .shield-badge {
+    width: 44px;
+    height: 44px;
+    border-radius: 14px;
+    background: rgba(10, 132, 255, 0.16);
+    border: 1px solid rgba(10, 132, 255, 0.32);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .privacy-body {
+    flex: 1;
+  }
+
+  .privacy-title {
+    font-size: 15px;
+    font-weight: 600;
+    margin: 0 0 3px;
+  }
+
+  .privacy-desc {
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin: 0;
+    line-height: 1.35;
+  }
+
+  .privacy-count {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--accent);
+    font-variant-numeric: tabular-nums;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <h2 class="section-title">Favorites</h2>
+    <div class="glass-card">
+      <div class="favorites-grid">
+        <a class="fav-item" href="https://www.google.com">
+          <div class="fav-icon" style="background: rgba(66,133,244,0.16);">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+              <path d="M21.8 12.2c0-.7-.1-1.4-.2-2H12v3.8h5.5a4.7 4.7 0 0 1-2 3.1v2.6h3.3c1.9-1.8 3-4.4 3-7.5z" fill="#4285F4"/>
+              <path d="M12 22c2.7 0 5-.9 6.7-2.4l-3.3-2.6c-.9.6-2.1 1-3.4 1-2.6 0-4.9-1.8-5.7-4.2H3v2.7A10 10 0 0 0 12 22z" fill="#34A853"/>
+              <path d="M6.3 13.8a6 6 0 0 1 0-3.7V7.4H3a10 10 0 0 0 0 9.1l3.3-2.7z" fill="#FBBC05"/>
+              <path d="M12 6c1.5 0 2.8.5 3.8 1.5l2.9-2.9A10 10 0 0 0 3 7.4l3.3 2.7C7.1 7.8 9.4 6 12 6z" fill="#EA4335"/>
+            </svg>
+          </div>
+          <span class="fav-label">Google</span>
+        </a>
+
+        <a class="fav-item" href="https://www.youtube.com">
+          <div class="fav-icon" style="background: rgba(255,59,48,0.18);">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+              <rect x="2.5" y="5" width="19" height="14" rx="4.5" fill="#FF3B30"/>
+              <path d="M10 9.2L15.6 12L10 14.8V9.2Z" fill="#FFFFFF"/>
+            </svg>
+          </div>
+          <span class="fav-label">YouTube</span>
+        </a>
+
+        <a class="fav-item" href="https://shivajiamihit.in">
+          <div class="fav-icon" style="background: rgba(147,197,114,0.18);">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+              <circle cx="12" cy="12" r="9" stroke="#93C572" stroke-width="2"/>
+              <path d="M9.5 14.5L14.5 9.5M10 9.5H14.5V14" stroke="#93C572" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <span class="fav-label">My Site</span>
+        </a>
+
+        <a class="fav-item" href="https://github.com">
+          <div class="fav-icon" style="background: rgba(255,255,255,0.12);">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="#FFFFFF">
+              <path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.15-1.11-1.46-1.11-1.46-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.56 9.56 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.75c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/>
+            </svg>
+          </div>
+          <span class="fav-label">GitHub</span>
+        </a>
+
+        <a class="fav-item" href="https://www.instagram.com">
+          <div class="fav-icon" style="background: rgba(225,48,108,0.18);">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <rect x="3" y="3" width="18" height="18" rx="5.5" stroke="#FF375F" stroke-width="2"/>
+              <circle cx="12" cy="12" r="4" stroke="#FF375F" stroke-width="2"/>
+              <circle cx="17.2" cy="6.8" r="1.2" fill="#FF375F"/>
+            </svg>
+          </div>
+          <span class="fav-label">Instagram</span>
+        </a>
+
+        <a class="fav-item" href="https://x.com">
+          <div class="fav-icon" style="background: rgba(255,255,255,0.10);">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="#FFFFFF">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+            </svg>
+          </div>
+          <span class="fav-label">X</span>
+        </a>
+
+        <a class="fav-item" href="https://web.telegram.org">
+          <div class="fav-icon" style="background: rgba(50,173,230,0.18);">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M20.5 4.5L3.8 11.1c-1 .4-.9 1.8.1 2.1l4.2 1.3 1.6 4.9c.3.9 1.5 1.1 2.1.4l2.3-2.5 4.4 3.2c.8.6 2 .1 2.2-.9l2.4-13.6c.2-1-.8-1.9-1.8-1.5z" fill="#32ADE6"/>
+            </svg>
+          </div>
+          <span class="fav-label">Telegram</span>
+        </a>
+
+        <a class="fav-item" href="https://www.wikipedia.org">
+          <div class="fav-icon" style="background: rgba(255,255,255,0.12);">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M4 6l4.2 12L12 8.5 15.8 18 20 6" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <span class="fav-label">Wikipedia</span>
+        </a>
+      </div>
+    </div>
+
+    <h2 class="section-title">Privacy Report</h2>
+    <div class="glass-card privacy-card">
+      <div class="shield-badge">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+          <path d="M12 3L4.5 6.2V11.8C4.5 16.5 7.7 20.6 12 21.8C16.3 20.6 19.5 16.5 19.5 11.8V6.2L12 3Z" stroke="#0A84FF" stroke-width="2" stroke-linejoin="round"/>
+          <path d="M9.2 12.2L11.2 14.2L15.2 10.2" stroke="#0A84FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="privacy-body">
+        <p class="privacy-title">Trackers Prevented</p>
+        <p class="privacy-desc">Background protection silently blocks ads, popunders, and cross-site trackers.</p>
+      </div>
+      <div id="blockedCount" class="privacy-count">0</div>
+    </div>
+  </div>
+
+  <script>
+    function updatePrivacyCount(count) {
+      var el = document.getElementById('blockedCount');
+      if (el) el.textContent = Number(count || 0).toLocaleString();
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      if (window.SafariBridge && typeof window.SafariBridge.getBlockedCount === 'function') {
+        updatePrivacyCount(window.SafariBridge.getBlockedCount());
+      }
+    });
+  </script>
+</body>
+</html>
